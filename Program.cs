@@ -61,12 +61,23 @@
         return Math.Sqrt(InnerProduct(vector, vector));
     }
 
+    /// <summary>
+    /// Turns a given vector into a unit vector of the same direction
+    /// </summary>
+    /// <param name="vector">Initial vector to normalize</param>
+    /// <returns>A unit vector in the direction of the initial given vector</returns>
     public static List<double> NormalizeVector(List<double> vector)
     {
         double normFactor = 1 / Norm(vector);
         return ScalerMult(normFactor, vector);
     }
 
+    /// <summary>
+    /// Performs a scaler multiplication on a vector
+    /// </summary>
+    /// <param name="scaler">Scaler to multiply by</param>
+    /// <param name="vector">Initial vector to multiply with</param>
+    /// <returns>A new vector with each entry multiplies by the given scaler</returns>
     public static List<double> ScalerMult(double scaler, List<double> vector)
     {
         List<double> newVector = [];
@@ -77,6 +88,13 @@
         return newVector;
     }
 
+    /// <summary>
+    /// Performs vector addition on two given vectors
+    /// </summary>
+    /// <param name="vector1">First vector to add</param>
+    /// <param name="vector2">First vector to add with, or will subtract from vector1 is subtract is true</param>
+    /// <param name="subtract">Changes to vector subtraction, taking vector1 and subtracting vector2 from it</param>
+    /// <returns>Resulting vector from adding two vectors</returns>
     public static List<double> VectorAdd(List<double> vector1, List<double> vector2, bool subtract = false)
     {
         List<double> newVector = [];
@@ -90,6 +108,11 @@
         return newVector;
     }
 
+    /// <summary>
+    /// Makes a vector a certain size containging only 0s
+    /// </summary>
+    /// <param name="size">Size of vector to make</param>
+    /// <returns>A zero vector</returns>
     public static List<double> MakeZeroVector(int size)
     {
         List<double> result = [];
@@ -100,6 +123,12 @@
         return result;
     }
 
+    /// <summary>
+    /// Prints out a set of vectors
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="vectorSet">Vectors to print out</param>
+    /// <returns>String containing the entries of the vector set</returns>
     public static string PrintSet<T>(List<List<T>> vectorSet)
     {
         string result = "";
